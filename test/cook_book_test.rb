@@ -29,21 +29,22 @@ class CookBookTest < Minitest::Test
     assert_equal [@recipe1, @recipe2], @cookbook.recipes
   end
 
+  def test_it_can_list_ingredients
+    @cookbook.add_recipe(@recipe1)
+    @cookbook.add_recipe(@recipe2)
+
+    @recipe1.add_ingredient(@ingredient1, 2)
+    @recipe1.add_ingredient(@ingredient2, 8)
+
+    @recipe2.add_ingredient(@ingredient1, 2)
+    @recipe2.add_ingredient(@ingredient3, 4)
+    @recipe2.add_ingredient(@ingredient4, 1)
+    
+    assert_equal ["Cheese", "Macaroni", "Ground Beef", "Bun"], @cookbook.ingredients
+  end
 end
 
-# pry(main)> recipe1.total_calories
-# # => 440
-#
-# pry(main)> recipe2.total_calories
-# # => 675
-#
-# pry(main)> cookbook.add_recipe(recipe1)
-#
-# pry(main)> cookbook.add_recipe(recipe2)
-#
-# pry(main)> cookbook.ingredients
-# # => ["Cheese", "Macaroni", "Ground Beef", "Bun"]
-#
+
 # pry(main)> cookbook.highest_calorie_meal
 # # => #<Recipe:0x00007faae692a110...>
 #
