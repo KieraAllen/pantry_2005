@@ -3,7 +3,7 @@ require 'minitest/pride'
 require './lib/ingredient'
 require './lib/pantry'
 
-class IngredientTest < Minitest::Test
+class PantryTest < Minitest::Test
 
   def setup
     @ingredient1 = Ingredient.new({name: "Cheese", unit: "oz", calories: 50})
