@@ -18,12 +18,12 @@ class RecipeTest < Minitest::Test
   def test_it_can_read_attributes
     assert_equal "Mac and Cheese", @recipe1.name
   end
+
+  def test_it_starts_with_no_ingredients
+    assert_equal ({}), @recipe1.ingredients_required
+  end
 end
 
-
-# pry(main)> recipe1.ingredients_required
-# # => {}
-#
 # pry(main)> recipe1.add_ingredient(ingredient1, 2)
 #
 # pry(main)> recipe1.add_ingredient(ingredient1, 4)
