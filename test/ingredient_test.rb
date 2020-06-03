@@ -1,7 +1,6 @@
 require 'minitest/autorun'
 require 'minitest/pride'
 require './lib/ingredient'
-require './lib/pantry'
 
 class IngredientTest < Minitest::Test
 
