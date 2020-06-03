@@ -18,6 +18,10 @@ class IngredientTest < Minitest::Test
   def test_it_starts_with_no_stock
     assert_equal ({}), @pantry.stock
   end
+
+  def test_it_can_check_the_stock
+    assert_equal 0, @pantry.stock_check(@ingredient1)
+  end
 end
 
 
